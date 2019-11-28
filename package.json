@@ -4,7 +4,9 @@
   "description": "Banana Internationalization library",
   "main": "dist/banana-i18n.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha",
+    "test:types": "tsc -p ./types/tests/tsconfig.json",
+    "test:unit": "NODE_ENV=test mocha",
+    "test": "npm run test:types && npm run test:unit",
     "build": "webpack --mode=production"
   },
   "keywords": [
@@ -21,6 +23,7 @@
     "type": "git",
     "url": "git+https://github.com/wikimedia/banana-i18n.git"
   },
+  "typings": "./types/index.d.ts",
   "license": "MIT",
   "devDependencies": {
     "babel-preset-env": "1.7.0",
@@ -34,6 +37,7 @@
     "mocha": "^5.2.0",
     "mocha-eslint": "^4.1.0",
     "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
+    "webpack-cli": "^3.3.10",
+    "typescript": "^3.7.2"
   }
 }
